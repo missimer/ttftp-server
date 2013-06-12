@@ -20,14 +20,14 @@ CFLAGS = -I./include -MMD
 
 CFLAGS += -g
 
-OBJS = src/ttftp.o
+OBJS = src/ttftps.o
 DFILES = $(patsubst %.o,%.d,$(OBJS))
-PROGS = ttftp
+PROGS = ttftps
 
 
 all: $(PROGS)
 
-ttftp: $(OBJS)
+$(PROGS): $(OBJS)
 	gcc $^ -o $@
 
 clean:

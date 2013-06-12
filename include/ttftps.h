@@ -15,18 +15,11 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-#include <stdlib.h>
-#include <stdio.h>
-
-
-int main(int argc, char* argv[])
-{
-  
-}
+#ifdef  _TTFTPS_H_
+#define _TTFTPS_H_
 
 
-
+#endif // _TTFTPS_H_
 
 /* 
  * Local Variables:
