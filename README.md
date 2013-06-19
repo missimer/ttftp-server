@@ -3,6 +3,14 @@ ttftp-server
 
 The Trivial Trivial File Transfer Protocol Server
 
+Usage: 
+
+ttftps [-p port_num] [-r path_root]
+
+Defaults:
+	port_num:  69
+	path_root:  ./
+
 
 What it is and why:
 

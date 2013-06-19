@@ -388,7 +388,7 @@ BOOL process_program_args(int argc, char* argv[], ttftps_params_t* params)
 
 void print_usage()
 {
-  fprintf(stderr, "Invalid arguments\n");
+  fprintf(stderr, "usage: ttftps [-p port_num] [-r path_root]\n");
 }
 
 int main(int argc, char* argv[])
