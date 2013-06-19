@@ -293,7 +293,7 @@ static int start_server(ttftps_params_t* params)
     perror("socket");
     return EXIT_FAILURE;
   }
-
+  server.path_root = params->path_root;
   server.server_port = params->server_port;
   server.client_port = params->client_port;
   
