@@ -16,7 +16,7 @@
 #
 
 
-CFLAGS = -I./include -MMD
+CFLAGS = -I./include -MMD -Wall
 
 CFLAGS += -g
 
