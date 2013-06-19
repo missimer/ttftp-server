@@ -310,7 +310,7 @@ static int start_server(ttftps_params_t* params)
   while(1) {
     tftp_packet_t packet = DEFAULT_TFTP_PACKET;
     if(server.server_mode == WAITING_FOR_REQUEST) {
-      printf("Calling recvfrom at line %d\n", __LINE__);
+      //printf("Calling recvfrom at line %d\n", __LINE__);
       if ((bytes_recv = recvfrom(s, buf, sizeof(buf), 0,
                                  (struct sockaddr * __restrict__)&si_other, &slen))==-1) {
         error_count++;
@@ -319,7 +319,7 @@ static int start_server(ttftps_params_t* params)
       }
     }
     else {
-      printf("Calling recvfrom at line %d\n", __LINE__);
+      //printf("Calling recvfrom at line %d\n", __LINE__);
       if ((bytes_recv = recvfrom(server.client_socket, buf, sizeof(buf), 0,
                                  (struct sockaddr * __restrict__)&server.client, &slen))==-1) {
         error_count++;
@@ -327,8 +327,8 @@ static int start_server(ttftps_params_t* params)
         continue;
       }
     }
-    printf("Received packet from %s:%d, %lu\n", 
-           inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port), bytes_recv);
+    //printf("Received packet from %s:%d, %lu\n", 
+    //       inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port), bytes_recv);
     if(!parse_recvd_packet(&packet, buf, bytes_recv)) {
       error_count++;
       if(error_count >= RECV_ERROR_COUNT_MAX) break;
@@ -398,8 +398,8 @@ int main(int argc, char* argv[])
     print_usage();
     return EXIT_FAILURE;    
   }
-  printf("port = %d\n", params.server_port);
-  printf("root path = %s\n", params.path_root);
+  //printf("port = %d\n", params.server_port);
+  //printf("root path = %s\n", params.path_root);
   return start_server(&params);
 }
 
