@@ -74,7 +74,6 @@ typedef struct {
   struct sockaddr_in client;
   struct sockaddr_in client_me;
   FILE* file;
-  char* root_path;
   uint server_port;
   uint client_port;
 } server_state_t;

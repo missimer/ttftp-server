@@ -209,14 +209,16 @@ static BOOL process_recvd_packet(tftp_packet_t* packet, server_state_t* server)
     }
     
     if(packet->filename[0] == '/') packet->filename++;
-    if(server->root_path) {
-      strcpy(path, server->root_path);
+    
+    if(server->path_root) {
+      strcpy(path, server->path_root);
       strcat(path, packet->filename);
     }
     else {
       strcpy(path, packet->filename);
     }
     server->file = fopen(path, server->transfer_mode == TFTP_MODE_OCTET ? "rb" : "r");
+
     if(!server->file) return FALSE;
     server->ack_num = 0;
     if(packet->option_bitmap) {
@@ -398,8 +400,6 @@ int main(int argc, char* argv[])
     print_usage();
     return EXIT_FAILURE;    
   }
-  //printf("port = %d\n", params.server_port);
-  //printf("root path = %s\n", params.path_root);
   return start_server(&params);
 }
 
