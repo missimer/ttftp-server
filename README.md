@@ -33,3 +33,6 @@ with no gaurantee of its correctness.  In fact I can gaurantee that it
 does not nor will it most likely ever support all of the TFTP
 protocol, as it will only support the features necessary for its
 purpose.
+
+UPDATE: I will no longer be working on this as we now use a ramdisk
+filesystem for the rapid development of Quest.
